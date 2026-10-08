@@ -1,0 +1,47 @@
+<div class="app" id="app">
+  <header class="top">
+    <div class="brand">
+      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="var(--sea)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M9 15c4 1 6-2 9 0s1 6 5 6 5-5 9-3M12 30c3-2 6 0 8 2s6 1 7-1" fill="none" stroke="var(--c-aafrika)" stroke-width="4" stroke-linecap="round"/>
+        <ellipse cx="22" cy="22" rx="9" ry="20" fill="none" stroke="var(--ink)" stroke-width="1.3" opacity=".55"/>
+        <path d="M2 22h40" stroke="var(--ink)" stroke-width="1.3" opacity=".55"/>
+      </svg>
+      <div><h1>Mandrid, ookeanid ja maailmajaod</h1><p>Harjutusatlas · geograafia õpik lk 11</p></div>
+    </div>
+    <div class="starbox" title="Kogutud tähed: iga manner, maailmajagu ja ookean annab kuni 3 tähte">
+      <span class="stars" aria-hidden="true">★</span><b id="starCount">0/51</b><span class="bar"><i id="starBar"></i></span>
+    </div>
+    <button class="iconbtn" id="soundBtn" aria-pressed="true" title="Heli sisse/välja" aria-label="Heli"></button>
+  </header>
+  <nav class="tabs" role="tablist" aria-label="Režiimid">
+    <button class="tab" role="tab" data-tab="avasta" aria-selected="true">Avasta</button>
+    <button class="tab" role="tab" data-tab="harjuta" aria-selected="false">Harjuta</button>
+    <button class="tab" role="tab" data-tab="opik" aria-selected="false">Õpiku küsimused</button>
+    <button class="tab" role="tab" data-tab="test" aria-selected="false">Kontrolltöö</button>
+    <button class="tab" role="tab" data-tab="edu" aria-selected="false">Minu edu</button>
+  </nav>
+  <main class="stage">
+    <section class="mapcard" aria-label="Maailmakaart">
+      <div class="tools">
+        <div class="seg" id="layerSeg" role="group" aria-label="Kaardikiht">
+          <button data-layer="ct" aria-pressed="true">Mandrid</button>
+          <button data-layer="wp" aria-pressed="false">Maailmajaod</button>
+          <button data-layer="oc" aria-pressed="false">Ookeanid</button>
+        </div>
+        <div class="tgl" id="tgl">
+          <button id="tLabels" aria-pressed="true">Nimed</button>
+          <button id="tLines" aria-pressed="true">Jooned</button>
+        </div>
+      </div>
+      <div class="mapwrap" id="mapwrap">
+        <svg id="map" role="img" aria-label="Maailmakaart mandrite, maailmajagude ja ookeanidega"></svg>
+        <div class="tip" id="tip"></div>
+        <span class="zoom"><button id="zIn" aria-label="Suurenda">+</button><button id="zOut" aria-label="Vähenda">−</button><button id="zReset" aria-label="Kogu kaart">⟲</button></span>
+      </div>
+      <div class="maphint" id="maphint"></div>
+    </section>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </main>
+</div>
+<canvas id="confetti" aria-hidden="true"></canvas>
